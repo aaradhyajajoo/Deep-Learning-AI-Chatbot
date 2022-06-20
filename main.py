@@ -110,5 +110,9 @@ def chat():
                     responses = tg['responses']
                     print(random.choice(responses))
         else:
-            print("I didn't understand that")
+            tag = "no_answer"
+            for tg in data["intents"]:
+                if tg['tag'] == tag:
+                    responses = tg['responses']
+                    print(random.choice(responses))
 chat()
